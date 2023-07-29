@@ -108,7 +108,7 @@ export function Navbar({ brandName, routes, action }) {
             className="mb-2 block"
           >
             <Button variant="text" size="sm" fullWidth>
-              pro version
+              {/* pro version */}
             </Button>
           </a>
           {React.cloneElement(action, {
