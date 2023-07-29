@@ -29,7 +29,7 @@ export function Home() {
                 color="white"
                 className="mb-6 font-black"
               >
-                {/* G &nbsp; O &nbsp; O &nbsp; D &nbsp; &nbsp; B &nbsp; Y &nbsp; E  */}
+                G &nbsp; O &nbsp; O &nbsp; D &nbsp; &nbsp; B &nbsp; Y &nbsp; E 
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
                Its Really Hard to Say Good Bye to the Loved Ones. Dont Worry We are with you to make your Toughest Time Lighter
