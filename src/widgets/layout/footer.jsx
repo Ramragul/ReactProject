@@ -154,7 +154,7 @@ Footer.defaultProps = {
   ],
   copyright: (
     <>
-      Copyright © {year} SNEKTO
+      Copyright © {year} XXX Company
       <a
         href="https://www.creative-tim.com?ref=mtk"
         target="_blank"
