@@ -13,7 +13,7 @@ export const featuresData = [
     title: "Contact Us",
     icon: StarIcon,
     description:
-      "For Funeral Booking and Queries : +91 9788875557",
+      "For Funeral Booking and Queries : +1 12345678",
   },
   {
     color: "red",
@@ -28,7 +28,7 @@ export const featuresData = [
     icon: PhoneArrowUpRightIcon,
     
     description:
-      "Call us for Booking +91 9788875557",
+      "Call us for Booking +1 12345678",
   },
   
 ];
