@@ -2,8 +2,11 @@
   "name": "material-tailwind-kit-react",
   "private": true,
   "version": "2.0.0",
+  "homepage": "http://www.goodbye.co.in",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
