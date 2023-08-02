@@ -1,4 +1,4 @@
-import { Home, Profile, SignIn, SignUp , Services,ContactUs} from "@/pages";
+import { Home, Profile, SignIn, SignUp , Services,ContactUs,ClientOnboardingForm} from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
@@ -31,9 +31,9 @@ export const routes = [
   },
   // {
   //   icon: NewspaperIcon,
-  //   name: "Latest News",
-  //   path: "/sign-up",
-  //   element: <SignUp />,
+  //   name: "ClientOnboarding",
+  //   path: "/form",
+  //   element: <ClientOnboardingForm />,
   // },
   // {
   //   icon: DocumentTextIcon,
