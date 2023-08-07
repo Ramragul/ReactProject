@@ -4,7 +4,7 @@ const aws = () => {
     const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
-      fetch("/api")
+      fetch("http://127.0.0.1:3001/api")
         .then((res) => res.json())
         .then((data) => setData(data.message));
     }, []);
