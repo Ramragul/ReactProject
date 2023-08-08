@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from "axios";
 
-const aws = () => {
+const AWS = () => {
     const [data, setData] = React.useState(null);
+    console.log("inside aws page")
 
     // React.useEffect(() => {
     //   fetch("http://127.0.0.1:3001/api")
@@ -20,4 +21,4 @@ const aws = () => {
         </div>
     )
 }
-export default aws;
+export default AWS;
