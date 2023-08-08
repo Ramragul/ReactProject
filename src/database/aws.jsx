@@ -4,13 +4,16 @@ import axios from "axios";
 const aws = () => {
     const [data, setData] = React.useState(null);
 
-    React.useEffect(() => {
-      fetch("http://www.google.com")
+    // React.useEffect(() => {
+    //   fetch("http://127.0.0.1:3001/api")
+    //     .then((res) => res.json())
+    //     .then((data) => setData(data.message));
+    // }, []);
 
-        .then((res) => res.json())
-        // .then((data) => setData(data.message));
-        .then((data) => console.log(data.message));
-    }, []);
+    axios
+        .get("https://www.google.com")
+        .then(data => console.log(data.data))
+        .catch(error => console.log(error));
     return(
         <div>
             <p>{!data ? "Loading..." : data}</p>
