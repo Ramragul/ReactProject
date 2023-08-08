@@ -1,10 +1,12 @@
 import React from 'react'
+import axios from "axios";
 
 const aws = () => {
     const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
-      fetch("http://127.0.0.1:3001/api")
+      fetch("http://www.google.com")
+
         .then((res) => res.json())
         .then((data) => setData(data.message));
     }, []);
