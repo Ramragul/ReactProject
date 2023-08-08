@@ -8,7 +8,8 @@ const aws = () => {
       fetch("http://www.google.com")
 
         .then((res) => res.json())
-        .then((data) => setData(data.message));
+        // .then((data) => setData(data.message));
+        .then((data) => console.log(data.message));
     }, []);
     return(
         <div>
