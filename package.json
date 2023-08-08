@@ -11,7 +11,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "proxy": "http://www.goodbye.co.in",
+  // "proxy": "http://www.goodbye.co.in",
   "dependencies": {
     "@heroicons/react": "^2.0.12",
     "@material-tailwind/react": "^1.2.4",
