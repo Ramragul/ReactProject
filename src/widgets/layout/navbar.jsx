@@ -98,7 +98,7 @@ export function Navbar({ brandName, routes, action }) {
       </div>
       <MobileNav
         className="rounded-xl bg-white px-4 pt-2 pb-4 text-blue-gray-900"
-        open={openNav}
+        open={openNav} onClick={() => setOpenNav(!openNav)}
       >
         <div className="container mx-auto">
           {navList}

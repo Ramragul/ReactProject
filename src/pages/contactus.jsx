@@ -1,4 +1,6 @@
-import React from "react";
+import React ,{useState} from "react";
+import {useForm} from "react-hook-form";
+import axios from 'axios';
 import {
   Card,
   CardBody,
@@ -8,12 +10,42 @@ import {
   IconButton,
   Input,
   Textarea,
+  Alert
 } from "@material-tailwind/react";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
 
 export const ContactUs = () => {
+
+  const {register , handleSubmit} = useForm();
+
+  const [alert,setAlert] = useState(false)
     
+  const onSubmit = (data) => {
+    
+   setAlert(true);
+    backendConnection(data);
+    
+  }
+
+  const backendConnection = (data) => {
+  
+    let dataObj = {}
+    dataObj.fullName = data.fullName;
+    dataObj.email = data.email;
+    dataObj.city = data.city;
+    dataObj.mobileNumber = data.mobileNumber;
+    dataObj.message = data.message;
+    console.log("Backend Data Object")
+    console.log(dataObj)
+
+    // React.useEffect(() => {
+
+
+    axios.post("http://localhost:3002/userQuery", dataObj)
+    .then((res)=> console.log(res));
+  
+  }
     
     return(
         <>
@@ -49,19 +81,21 @@ export const ContactUs = () => {
           <PageTitle heading="Contact Us">
             Complete this form and we will get back to you in 5 minutes.
           </PageTitle>
-          <form className="mx-auto mt-12 max-w-3xl text-center">
+          <form className="mx-auto mt-12 max-w-3xl text-center" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-8 flex gap-8">
-              <Input variant="standard" size="lg" label="Full Name" />
-              <Input variant="standard" size="lg" label="Mobile Number" />
+              <Input {...register('fullName')} variant="standard" size="lg" label="Full Name" />
+              <Input {...register('mobileNumber')} variant="standard" size="lg" label="Mobile Number" />
             </div>
             <div className="mb-8 flex gap-8">
-              <Input variant="standard" size="lg" label="Email Address" />
-              <Input variant="standard" size="lg" label="City" />
+              <Input {...register('email')} variant="standard" size="lg" label="Email Address" />
+              <Input {...register('city')} variant="standard" size="lg" label="City" />
             </div>
-            <Textarea variant="standard" size="lg" label="Message" rows={8} />
-            <Button variant="gradient" size="lg" className="mt-8">
+            <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
+            <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
             </Button>
+            
+            {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
           </form>
         </div>
       </section>

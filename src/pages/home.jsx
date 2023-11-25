@@ -13,6 +13,7 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, teamData, contactData } from "@/data";
+import ContactUs from './contactus'
 
 export function Home() {
   return (
@@ -138,8 +139,8 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-blue-gray-50/50 py-24 px-4">
-        <div className="container mx-auto">
+      {/* <section className="relative bg-blue-gray-50/50 py-24 px-4">
+        <div className="container mx-auto"> */}
           {/* <PageTitle heading="Build something">
             Put the potentially record low maximum sea ice extent tihs year down
             to low ice. According to the National Oceanic and Atmospheric
@@ -167,7 +168,7 @@ export function Home() {
               </Card>
             ))}
           </div> */}
-          <PageTitle heading="Contact Us">
+          {/* <PageTitle heading="Contact Us">
             Complete this form and we will get back to you in 5 minutes.
           </PageTitle>
           <form className="mx-auto mt-12 max-w-3xl text-center">
@@ -185,8 +186,10 @@ export function Home() {
             </Button>
           </form>
         </div>
-      </section>
+      </section> */}
+      <ContactUs />
       <div className="bg-blue-gray-50/50">
+        
         <Footer />
       </div>
     </>
