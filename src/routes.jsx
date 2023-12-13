@@ -31,9 +31,9 @@ export const routes = [
   },
   {
     icon: NewspaperIcon,
-    name: "ClientOnboarding",
-    path: "/form",
-    element: <ClientOnboardingForm />,
+    name: "Contact Us",
+    path: "/contact",
+    element: <ContactUs />,
   },
   // {
   //   icon: DocumentTextIcon,
