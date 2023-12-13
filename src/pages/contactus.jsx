@@ -1,6 +1,7 @@
 import React ,{useState} from "react";
 import {useForm} from "react-hook-form";
 import axios from 'axios';
+import Home from "./home1";
 import {
   Card,
   CardBody,
@@ -91,8 +92,11 @@ export const ContactUs = () => {
               <Input {...register('city')} variant="standard" size="lg" label="City" />
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
-            <Button variant="gradient" size="lg" className="mt-8" type="submit">
+            {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
+            </Button> */}
+            <Button component={Home} to="/home">
+            Click Me
             </Button>
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
