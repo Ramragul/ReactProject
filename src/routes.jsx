@@ -29,12 +29,12 @@ export const routes = [
     path: "/contact",
     element: <ContactUs />,
   },
-  // {
-  //   icon: NewspaperIcon,
-  //   name: "ClientOnboarding",
-  //   path: "/form",
-  //   element: <ClientOnboardingForm />,
-  // },
+  {
+    icon: NewspaperIcon,
+    name: "ClientOnboarding",
+    path: "/form",
+    element: <ClientOnboardingForm />,
+  },
   // {
   //   icon: DocumentTextIcon,
   //   name: "Docs",
