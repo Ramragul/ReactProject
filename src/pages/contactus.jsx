@@ -2,7 +2,7 @@ import React ,{useState} from "react";
 import {useForm} from "react-hook-form";
 import axios from 'axios';
 import Home from "./home1";
-import { Link } from 'react-router-dom'
+import { Link , useHistory} from 'react-router-dom'
 import {
   Card,
   CardBody,
@@ -18,6 +18,8 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
 
 export const ContactUs = () => {
+
+  const history = useHistory()
 
   const {register , handleSubmit} = useForm();
 
@@ -96,7 +98,7 @@ export const ContactUs = () => {
             {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
             </Button> */}
-            <Button component={Home} to="/home">
+            <Button onClick={() => history.push('/your/path')}>
             Click Me
             </Button>
             
