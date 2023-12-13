@@ -99,7 +99,7 @@ export const ContactUs = () => {
               Send Message
             </Button> */}
             <Button onClick={() => history.push('/home')}>
-            Click Me pls
+            POST
             </Button>
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
