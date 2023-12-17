@@ -100,7 +100,7 @@ export const ContactUs = () => {
             {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
             </Button> */}
-            <Button onClick={() => navigate('/home')}>
+            <Button onClick={() => alert("Clicked")}>
             POSTNAV
             </Button>
             
