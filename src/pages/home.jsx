@@ -15,7 +15,13 @@ import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, teamData, contactData } from "@/data";
 import ContactUs from './contactus'
 
+import { useNavigate } from 'react-router-dom';
+
+
 export function Home() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
@@ -42,7 +48,7 @@ export function Home() {
       <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map(({ color, title, icon, description }) => (
+            {featuresData.map(({ color, title, icon, description ,navPage}) => (
               <FeatureCard
                 key={title}
                 color={color}
@@ -51,7 +57,7 @@ export function Home() {
                   className: "w-5 h-5 text-white",
                 })}
                 description={description}
-                onClick={()=>console.log("On Click Function in home page from cards")}
+                onClick={()=>navigate(navPage)}
               />
             ))}
           </div>
