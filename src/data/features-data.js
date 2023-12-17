@@ -30,6 +30,14 @@ export const featuresData = [
     description:
       "Call us for Booking +1 12345678",
   },
+  {
+    color: "teal",
+    title: "Booking Via Visit",
+    icon: PhoneArrowUpRightIcon,
+    
+    description:
+      "Call us for Booking +1 12345678",
+  },
   
 ];
 
