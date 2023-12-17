@@ -20,7 +20,7 @@ import { PageTitle, Footer } from "@/widgets/layout";
 
 export const ContactUs = () => {
 
-  const history = useHistory();
+  //const history = useHistory();
   const navigate = useNavigate();
 
   const {register , handleSubmit} = useForm();
