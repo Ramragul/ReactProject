@@ -3,7 +3,7 @@ import {useForm} from "react-hook-form";
 import axios from 'axios';
 import Home from "./home1";
 //import { Link} from 'react-router-dom'
-import { useNavigate,useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Card,
   CardBody,
