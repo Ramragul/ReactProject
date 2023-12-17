@@ -100,8 +100,8 @@ export const ContactUs = () => {
             {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
             </Button> */}
-            <Button onClick={() => history.push('/home')}>
-            POST
+            <Button onClick={() => navigate('/home')}>
+            POST Nav
             </Button>
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
