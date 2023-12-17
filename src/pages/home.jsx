@@ -51,6 +51,7 @@ export function Home() {
                   className: "w-5 h-5 text-white",
                 })}
                 description={description}
+                onClick={()=>console.log("On Click Function in home page from cards")}
               />
             ))}
           </div>
