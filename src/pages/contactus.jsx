@@ -101,7 +101,7 @@ export const ContactUs = () => {
               Send Message
             </Button> */}
             <Button onClick={() => alert("Clicked")}>
-            POSTNAV
+            POSTNAVI
             </Button>
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
