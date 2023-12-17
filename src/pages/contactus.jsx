@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import axios from 'axios';
 import Home from "./home1";
 //import { Link} from 'react-router-dom'
+import { useNavigate,useHistory } from 'react-router-dom';
 import {
   Card,
   CardBody,
@@ -18,6 +19,9 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
 
 export const ContactUs = () => {
+
+  const history = useHistory();
+  const navigate = useNavigate();
 
   const {register , handleSubmit} = useForm();
 
