@@ -57,7 +57,7 @@ export function Home() {
                   className: "w-5 h-5 text-white",
                 })}
                 description={description}
-                onClick={()=>navigate(navPage)}
+                onClick={()=>(navPage)?navigate(navPage):console.log('No Navigation')}
               />
             ))}
           </div>
