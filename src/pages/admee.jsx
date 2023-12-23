@@ -40,8 +40,13 @@ export const Admee = () => {
     dataObj.fullName = data.fullName;
     dataObj.email = data.email;
     dataObj.city = data.city;
+    dataObj.state = data.state;
+    dataObj.country = data.country;
     dataObj.mobileNumber = data.mobileNumber;
-    dataObj.message = data.message;
+    dataObj.vehicleNumber = data.vehicleNumber;
+    dataObj.vehicleType = data.vehicleType;
+    dataObj.remarks = data.remarks;
+    dataObj.pincode = data.pincode;
     console.log("Backend Data Object")
     console.log(dataObj)
 
@@ -98,14 +103,30 @@ export const Admee = () => {
               <Input {...register('email')} variant="standard" size="lg" label="Email Address" />
             </div>
             <div className="mb-8 flex">
-              <Input {...register('city')} variant="standard" size="lg" label="City" />
+              <Input {...register('vehicleType')} variant="standard" size="lg" label="Vehicle Type" />
             </div>
-            <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
+            <div className="mb-8 flex">
+              <Input {...register('vehicleNumber')} variant="standard" size="lg" label="Vehicle Number" />
+            </div>
+            <Textarea {...register('Address')} variant="standard" size="lg" label="Address" rows={8} />
+            <div className="mb-8 flex">
+              <Input {...register('state')} variant="standard" size="lg" label="State" />
+            </div>
+            <div className="mb-8 flex">
+              <Input {...register('country')} variant="standard" size="lg" label="Country" />
+            </div>
+            <div className="mb-8 flex">
+              <Input {...register('pincode')} variant="standard" size="lg" label="Pincode" />
+            </div>
+            <div className="mb-8 flex">
+              <Input {...register('amount')} variant="standard" size="lg" label="Expected Amount" />
+            </div>
+            <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={8} />
             {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
             </Button> */}
             <Button onClick={() => navigate('/home')}>
-            POSTNAVII
+            Add Mee
             </Button>
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
