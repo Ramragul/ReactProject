@@ -122,12 +122,12 @@ export const Admee = () => {
               <Input {...register('expectedAmount')} variant="standard" size="lg" label="Expected Amount" />
             </div>
             <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={8} />
-            {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              Send Message
-            </Button> */}
-            <Button onClick={() => navigate('/home')}>
-            Add Mee
+            <Button variant="gradient" size="lg" className="mt-8" type="submit">
+              Add Mee
             </Button>
+            {/* <Button onClick={() => navigate('/home')}>
+            Add Mee
+            </Button> */}
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
           </form>
