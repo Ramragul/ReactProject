@@ -53,7 +53,7 @@ export const Admee = () => {
     // React.useEffect(() => {
 
 
-    axios.post("http://localhost:3002/userQuery", dataObj)
+    axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
     .then((res)=> console.log(res));
   
   }
@@ -119,7 +119,7 @@ export const Admee = () => {
               <Input {...register('pincode')} variant="standard" size="lg" label="Pincode" />
             </div>
             <div className="mb-8 flex">
-              <Input {...register('amount')} variant="standard" size="lg" label="Expected Amount" />
+              <Input {...register('expectedAmount')} variant="standard" size="lg" label="Expected Amount" />
             </div>
             <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={8} />
             {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
