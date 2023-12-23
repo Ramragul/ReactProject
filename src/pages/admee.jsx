@@ -108,7 +108,10 @@ export const Admee = () => {
             <div className="mb-8 flex">
               <Input {...register('vehicleNumber')} variant="standard" size="lg" label="Vehicle Number" />
             </div>
-            <Textarea {...register('Address')} variant="standard" size="lg" label="Address" rows={8} />
+            <Textarea {...register('Address')} variant="standard" size="lg" label="Address" rows={2} />
+            <div className="mb-8 flex">
+              <Input {...register('city')} variant="standard" size="lg" label="City" />
+            </div>
             <div className="mb-8 flex">
               <Input {...register('state')} variant="standard" size="lg" label="State" />
             </div>
@@ -121,9 +124,9 @@ export const Admee = () => {
             <div className="mb-8 flex">
               <Input {...register('expectedAmount')} variant="standard" size="lg" label="Expected Amount" />
             </div>
-            <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={8} />
+            <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={2} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              Add Mee
+              AddMee
             </Button>
             {/* <Button onClick={() => navigate('/home')}>
             Add Mee
