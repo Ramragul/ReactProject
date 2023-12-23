@@ -53,7 +53,7 @@ export const Admee = () => {
     // React.useEffect(() => {
 
 
-    axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
+    axios.post("http://192.168.1.10:3002/api/admee/addPartners", dataObj)
     .then((res)=> console.log(res));
   
   }
