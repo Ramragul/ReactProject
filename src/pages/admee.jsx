@@ -90,10 +90,14 @@ export const Admee = () => {
           <form className="mx-auto mt-12 max-w-3xl text-center" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-8 flex gap-8">
               <Input {...register('fullName')} variant="standard" size="lg" label="Full Name" />
-              <Input {...register('mobileNumber')} variant="standard" size="lg" label="Mobile Number" />
             </div>
-            <div className="mb-8 flex gap-8">
+            <div className="mb-8 flex">
+            <Input {...register('mobileNumber')} variant="standard" size="lg" label="Mobile Number" />
+            </div>
+            <div className="mb-8 flex">
               <Input {...register('email')} variant="standard" size="lg" label="Email Address" />
+            </div>
+            <div className="mb-8 flex">
               <Input {...register('city')} variant="standard" size="lg" label="City" />
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
