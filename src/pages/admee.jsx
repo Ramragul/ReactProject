@@ -53,7 +53,7 @@ export const Admee = () => {
     // React.useEffect(() => {
 
 
-    axios.post("https://192.168.1.10:3002/api/admee/addPartners", dataObj)
+    axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
     .then((res)=> console.log(res));
   
   }
@@ -126,7 +126,7 @@ export const Admee = () => {
             </div>
             <Textarea {...register('remarks')} variant="standard" size="lg" label="Remarks" rows={2} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              AddMee
+              Add Mee
             </Button>
             {/* <Button onClick={() => navigate('/home')}>
             Add Mee
