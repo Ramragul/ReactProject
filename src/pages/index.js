@@ -4,3 +4,4 @@ export * from "@/pages/sign-in";
 export * from "@/pages/sign-up";
 export * from "@/pages/services";
 export * from "@/pages/contactus";
+export * from "@/pages/admee";
