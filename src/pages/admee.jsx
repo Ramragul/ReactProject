@@ -53,8 +53,8 @@ export const Admee = () => {
     // React.useEffect(() => {
 
 
-    axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
-    //axios.post("https://192.168.1.10/api/admee/addPartners", dataObj)
+    //axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
+    axios.post("https://funeral-backend-git-main-ramragul.vercel.app//api/admee/addPartners", dataObj)
     .then((res)=> console.log(res));
   
   }
