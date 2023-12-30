@@ -54,7 +54,7 @@ export const Admee = () => {
 
 
     //axios.post("http://localhost:3002/api/admee/addPartners", dataObj)
-    axios.post("https://funeral-backend-git-main-ramragul.vercel.app//api/admee/addPartners", dataObj)
+    axios.post("https://funeral-backend-git-main-ramragul.vercel.app//api/admee/addPartners", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
     .then((res)=> console.log(res));
   
   }
