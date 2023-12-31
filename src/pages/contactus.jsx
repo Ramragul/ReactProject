@@ -48,7 +48,8 @@ export const ContactUs = () => {
     // React.useEffect(() => {
 
 
-    axios.post("http://localhost:3002/userQuery", dataObj)
+    //axios.post("http://localhost:3002/userQuery", dataObj)
+    axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery",dataObj)
     .then((res)=> console.log(res));
   
   }
