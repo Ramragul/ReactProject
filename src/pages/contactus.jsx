@@ -98,12 +98,12 @@ export const ContactUs = () => {
               <Input {...register('city')} variant="standard" size="lg" label="City" />
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
-            {/* <Button variant="gradient" size="lg" className="mt-8" type="submit">
+            <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Send Message
-            </Button> */}
-            <Button onClick={() => navigate('/home')}>
-            POSTNAVII
             </Button>
+            {/* <Button onClick={() => navigate('/home')}>
+            POSTNAVII
+            </Button> */}
             
             {alert &&  <Alert color="green">Your Deails has been submitted successfully.</Alert>} 
           </form>
