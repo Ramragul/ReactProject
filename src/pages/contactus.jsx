@@ -48,8 +48,8 @@ export const ContactUs = () => {
     // React.useEffect(() => {
 
 
-    axios.post("http://localhost:3002/userQuery", dataObj)
-    //axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery",dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+    //axios.post("http://localhost:3002/userQuery", dataObj)
+    axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery",dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
     .then((res)=> console.log(res));
   
   }
