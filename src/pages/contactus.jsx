@@ -50,7 +50,8 @@ export const ContactUs = () => {
 
     //axios.post("http://localhost:3002/userQuery", dataObj)
     //axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery",dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
-    axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+    //axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+    axios.get("http://admee.in/db/test",{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
     .then((res)=> console.log(res));
   
   }
@@ -100,7 +101,7 @@ export const ContactUs = () => {
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              Send Message
+              Send Message77
             </Button>
             {/* <Button onClick={() => navigate('/home')}>
             POSTNAVII
