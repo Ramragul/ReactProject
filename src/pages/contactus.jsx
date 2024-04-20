@@ -51,7 +51,8 @@ export const ContactUs = () => {
     //axios.post("http://localhost:3002/userQuery", dataObj)
     //axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery",dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
     //axios.post("https://funeral-backend-git-main-ramragul.vercel.app/userQuery", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
-    axios.get("https://admee.in:3002/db/test",{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+    //axios.get("https://admee.in:3002/db/test",{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+    axios.post("https://admee.in:3002/gb/bookings", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
     .then((res)=> console.log(res));
   
   }
@@ -101,7 +102,7 @@ export const ContactUs = () => {
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              Post Query
+              Book
             </Button>
             {/* <Button onClick={() => navigate('/home')}>
             POSTNAVII
