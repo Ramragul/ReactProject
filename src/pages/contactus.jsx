@@ -94,22 +94,39 @@ export const ContactUs = () => {
           </PageTitle>
           <form className="mx-auto mt-12 max-w-3xl text-center" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-8 flex gap-8">
-              <Input {...register('fullName')} variant="standard" size="lg" label="Full Name" />
-              <Input {...register('mobileNumber')} variant="standard" size="lg" label="Mobile Number" />
+              <Input {...register('fullName')} size="lg" label="Full Name" />
             </div>
             <div className="mb-8 flex gap-8">
-              <Input {...register('email')} variant="standard" size="lg" label="Email Address" />
-              <Input {...register('city')} variant="standard" size="lg" label="City" />
+              <Input {...register('mobileNumber')} size="lg" label="Mobile Number" />
+            </div>
+            <div className="mb-8 flex gap-8">
+              <Input {...register('email')} size="lg" label="Email Address" />
+            </div>
+            <div className="mb-8 flex gap-8">
+              <Input {...register('city')}  size="lg" label="City" />
             </div>
             <div className="mb-8 flex gap-8" >
-            <label variant="standard" size="lg">Category</label>
-            <select {...register('category')} variant="standard" size="lg">
+            <label style ={{color:'dark-grey'}} variant="standard" size="lg">Category</label>
+            {/* <select {...register('category')} variant="standard" size="lg">
                <option value="budget">Budget Package</option>
                <option value="classic">Classic Package</option>
                <option value="elite">Elite Package</option>
-            </select>
+            </select> */}
+             <select
+      style={{
+        backgroundColor: '#f3f4f6', // Set background color
+        border: '1px solid #e5e7eb', // Set border
+        borderRadius: '0.25rem', // Add border radius for rounded corners
+       // padding: '0.5rem', // Add padding for better spacing
+        color: 'purple',
+      }}
+    >
+      <option value="budget">Budget Package</option>
+      <option value="classc">Classic Package</option>
+      <option value="elite">Elite Package</option>
+    </select>
             </div>
-            <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
+            <Textarea {...register('message')}  size="lg" label="Message" rows={2} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
               Book
             </Button>
