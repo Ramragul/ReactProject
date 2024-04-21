@@ -122,7 +122,7 @@ export const ContactUs = () => {
       }}
     >
       <option value="budget">Budget Package</option>
-      <option value="classc">Classic Package</option>
+      <option value="classic">Classic Package</option>
       <option value="elite">Elite Package</option>
     </select>
             </div>
