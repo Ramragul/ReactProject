@@ -111,7 +111,7 @@ export function Home() {
                   <br/>
                   <Typography
                     variant="h5"
-                    color="blue-gray"
+                    color="red"
                     className="mb-3 font-bold"
                   >
                   1. Budget Package  - 10000 rs
