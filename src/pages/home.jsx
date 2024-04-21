@@ -111,7 +111,7 @@ export function Home() {
                   <br/>
                   <Typography
                     variant="h5"
-                    color="purple"
+                    color="dark-purple"
                     className="mb-3"
                   >
                   1. Budget Package  - 10000 rs
@@ -122,9 +122,8 @@ export function Home() {
                   <br/>
                   </Typography>
                   <br/>
-                  <br/>
 
-                  We offer free service for Orphan and Kids.
+                  *We offer free service for Orphan and Kids.
 
                   </Typography>
                 </CardBody>
