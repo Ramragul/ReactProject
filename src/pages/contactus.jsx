@@ -112,7 +112,7 @@ export const ContactUs = () => {
                <option value="classic">Classic Package</option>
                <option value="elite">Elite Package</option>
             </select> */}
-             <select
+             <select {...register('category')}
       style={{
         backgroundColor: '#f3f4f6', // Set background color
         border: '1px solid #e5e7eb', // Set border
