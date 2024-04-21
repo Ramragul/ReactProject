@@ -42,6 +42,7 @@ export const ContactUs = () => {
     dataObj.city = data.city;
     dataObj.mobileNumber = data.mobileNumber;
     dataObj.message = data.message;
+    dataObj.category = data.category
     console.log("Backend Data Object")
     console.log(dataObj)
 
@@ -99,6 +100,14 @@ export const ContactUs = () => {
             <div className="mb-8 flex gap-8">
               <Input {...register('email')} variant="standard" size="lg" label="Email Address" />
               <Input {...register('city')} variant="standard" size="lg" label="City" />
+            </div>
+            <div className="mb-8 flex gap-8" >
+            <label variant="standard" size="lg">Category</label>
+            <select {...register('category')} variant="standard" size="lg">
+               <option value="budget">Budget Package</option>
+               <option value="classic">Classic Package</option>
+               <option value="elite">Elite Package</option>
+            </select>
             </div>
             <Textarea {...register('message')} variant="standard" size="lg" label="Message" rows={8} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
