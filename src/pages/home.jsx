@@ -108,6 +108,10 @@ export function Home() {
                   We offer Luxury , Moderate and Budgeted funeral packages.
                   You can select your convenient package and avail our service.
 
+                  1. Budget Package  - 10000 rs
+                  2. Classic Package - 20000 rs
+                  3. Elite Package   - 30000 rs
+
                   <br/>
                   <br/>
 
