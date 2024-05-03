@@ -33,7 +33,7 @@ export const Services = () => {
 
         {/* New Code Begins */}
 
-        <section className="px-4 pt-24 md:pt-32 pb-12 bg-gray-100">
+        {/* <section className="px-4 pt-24 md:pt-32 pb-12 bg-gray-100">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Our Services</h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
@@ -69,9 +69,9 @@ export const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
 
-{/* <section className="px-4 pt-24 md:pt-32 pb-12 bg-gray-100">
+<section className="px-4 pt-24 md:pt-32 pb-12 bg-gray-100">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Our Services</h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
@@ -85,7 +85,7 @@ export const Services = () => {
             </ul>
             <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full block mx-auto">Select</button>
           </div>
-          <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-blue-200">
+          <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-grey-200">
             <h3 className="text-xl font-bold mb-3 text-center">Silver Package</h3>
             <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹20,000 INR</span></p>
             <ul className="text-left mb-6">
@@ -107,7 +107,7 @@ export const Services = () => {
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
 
         
         {/* New Code Ends */}
