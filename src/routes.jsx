@@ -7,8 +7,13 @@ import {
   DocumentTextIcon,
   NewspaperIcon,
   UsersIcon,
-  CheckBadgeIcon
+  CheckBadgeIcon,
 } from "@heroicons/react/24/solid";
+
+import { FaSearch } from 'react-icons/fa';
+import { FuneralGroundSearch } from "./pages/funeralGroundSearch";
+
+
 
 export const routes = [
   {
@@ -16,24 +21,34 @@ export const routes = [
     name: "home",
     path: "/home",
     element: <Home />,
+    visible: true,
   },
   {
     icon: CheckBadgeIcon,
     name: "services",
     path: "/services",
     element: <Services />,
+    visible: false,
   },
   {
     icon: UsersIcon,
     name: "Contact Us",
     path: "/contact",
     element: <ContactUs />,
+    visible: false,
   },
+  // {
+  //   icon: UsersIcon,
+  //   name: "Admee",
+  //   path: "/admee",
+  //   element: <Admee />,
+  // },
   {
-    icon: UsersIcon,
-    name: "Admee",
-    path: "/admee",
-    element: <Admee />,
+    icon: FaSearch,
+    name: "FuneralGroundSearch",
+    path: "/funeralground",
+    element: <FuneralGroundSearch />,
+    visible: false,
   },
   // {
   //   icon: NewspaperIcon,
@@ -41,13 +56,14 @@ export const routes = [
   //   path: "/form",
   //   element: <ClientOnboardingForm />,
   // },
-  // {
-  //   icon: DocumentTextIcon,
-  //   name: "Docs",
-  //   href: "https://www.material-tailwind.com/docs/react/installation",
-  //   target: "_blank",
-  //   element: "",
-  // },
+  {
+    icon: DocumentTextIcon,
+    name: "Docs",
+    href: "https://www.material-tailwind.com/docs/react/installation",
+    target: "_blank",
+    element: "",
+    visible: false,
+  },
 ];
 
 export default routes;

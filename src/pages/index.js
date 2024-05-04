@@ -5,3 +5,4 @@ export * from "@/pages/sign-up";
 export * from "@/pages/services";
 export * from "@/pages/contactus";
 export * from "@/pages/admee";
+export * from "@/pages/funeralGroundSearch";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
@@ -11,7 +11,9 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export function Navbar({ brandName, routes, action }) {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const [filteredRoutes,setFilteredRoutes] = useState([]);
+  //const [routes,setRoutes] = useState([]);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -20,9 +22,32 @@ export function Navbar({ brandName, routes, action }) {
     );
   }, []);
 
+  // New code Begins
+    //const routeVal = routes
+      
+    // const fR = routes.filter( route => { 
+      
+    //   return route.visible === "yes"
+    // }
+    // )
+    // setFilteredRoutes(fR);
+    // console.log("Filtered Routes 77" +JSON.stringify(filteredRoutes ))
+
+    // New code Ends
+    
+   
+
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {routes.map(({ name, path, icon, href, target }) => (
+ 
+ 
+      
+     {/* { routes.map(({ name, path, icon, href, target }) => ( */}
+    { routes
+    .filter(route => route.visible === true)
+    .map(({ name, path, icon, href, target }) => (
+    
+    
         <Typography
           key={name}
           as="li"
