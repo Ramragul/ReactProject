@@ -67,3 +67,124 @@
     }
   }
   
+  /* FuneralGroundDetails.css */
+
+/* funeral.css  */
+
+.ground-image {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.funeral-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section-heading {
+  font-size: 1.5rem; 
+  font-weight: bold;
+  margin-bottom: 15px; 
+  color: #6b584c; 
+}
+
+.funeral-category-heading {
+  font-size: 1.8rem; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50; 
+  background-color: #f5f5f5; 
+  padding: 10px; 
+  border-radius: 10px; 
+}
+
+.funeral-details-card {
+  flex-basis: calc(50% - 20px);
+  background-color: #ffffff; 
+  border: 1px solid #dcdcdc; 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.funeral-details-card:nth-child(odd) {
+  background-color: #f9f9f9; 
+}
+
+@media (max-width: 768px) {
+  .funeral-details-card {
+    flex-basis: calc(100% - 20px);
+  }
+}
+
+.go-back-button {
+  background-color: #1e40af;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.go-back-button:hover {
+  background-color: #1e3a8a;
+}
+
+
+/* .image-slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px; 
+  margin: 0 auto;
+}
+
+.image-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.image-slider img {
+  flex: 0 0 auto;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-control {
+    font-size: 1.5rem;
+  }
+} */

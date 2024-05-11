@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export const FuneralGroundSearch = () => {
@@ -150,8 +151,20 @@ export const FuneralGroundSearch = () => {
         <p className="text-red-600">Apologies, but we couldn't find any funeral grounds matching the entered postal code. Please try again with a different postal code or search by city.</p>
       )}
       <div className="grid grid-cols-1 gap-4">
+      
         {filteredGrounds.map(ground => (
-          <div key={ground.GroundID} className="bg-white rounded-lg p-4 border border-gray-300 shadow-md">
+          //console.log("Ground data:", ground),
+          <Link
+          key={ground.GroundID}
+          
+          to={{
+            pathname: '/funeralgrounddetails',
+          }}
+          state = {{ ground: ground }}
+          className="text-decoration-none"
+        >
+          {console.log("State:", { ground: ground })}
+          <div key={ground.GroundID} className="bg-white rounded-lg p-4 border border-gray-300 shadow-md cursor-pointer">
             <h2 className="text-lg text-pink-800 font-bold mb-2">{ground.GroundName}</h2>
             <p><span className="font-semibold">Location:</span> {ground.City}</p>
             <p><span className="font-semibold">Contact Info:</span> {ground.GroundPhoneNumber}</p>
@@ -160,10 +173,12 @@ export const FuneralGroundSearch = () => {
             <p><span className="font-semibold">City:</span> {ground.City}</p>
             <p><span className="font-semibold">Postal Code:</span> {ground.Pincode}</p>
           </div>
+          
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-//export default FuneralGroundSearch;
+export default FuneralGroundSearch;

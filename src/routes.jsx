@@ -1,4 +1,4 @@
-import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee} from "@/pages";
+import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee,FuneralGroundSearch,FuneralGroundDetails,FuneralGroundDataCollectionForm} from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
@@ -11,7 +11,8 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { FaSearch } from 'react-icons/fa';
-import { FuneralGroundSearch } from "./pages/funeralGroundSearch";
+//import { FuneralGroundSearch } from "./pages/funeralGroundSearch";
+//import {FuneralGroundDetails}
 
 
 
@@ -37,17 +38,32 @@ export const routes = [
     element: <ContactUs />,
     visible: false,
   },
-  // {
-  //   icon: UsersIcon,
-  //   name: "Admee",
-  //   path: "/admee",
-  //   element: <Admee />,
-  // },
+  {
+    icon: UsersIcon,
+    name: "Admee",
+    path: "/admee",
+    element: <Admee />,
+    visible: false,
+  },
   {
     icon: FaSearch,
     name: "FuneralGroundSearch",
     path: "/funeralground",
     element: <FuneralGroundSearch />,
+    visible: true,
+  },
+  {
+    icon: FaSearch,
+    name: "FuneralGroundDetails",
+    path: "/funeralgrounddetails",
+    element: <FuneralGroundDetails />,
+    visible: false,
+  },
+  {
+    icon: "",
+    name: "FuneralGroundDataCollectionForm",
+    path: "/funeralground/form",
+    element: <FuneralGroundDataCollectionForm />,
     visible: false,
   },
   // {

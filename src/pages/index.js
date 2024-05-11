@@ -6,3 +6,5 @@ export * from "@/pages/services";
 export * from "@/pages/contactus";
 export * from "@/pages/admee";
 export * from "@/pages/funeralGroundSearch";
+export * from "@/pages/funeralGroundDetails";
+export * from "@/pages/funeralGroundDataCollectionForm";

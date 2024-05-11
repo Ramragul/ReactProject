@@ -44,7 +44,7 @@ export const ContactUs = () => {
     dataObj.message = data.message;
     dataObj.category = data.category
     console.log("Backend Data Object")
-    console.log(dataObj)
+    console.log(JSON.stringify(dataObj))
 
     // React.useEffect(() => {
 

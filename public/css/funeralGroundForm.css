@@ -1,0 +1,57 @@
+.funeral-data-collection {
+  /* margin-top: 70px; */
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  background-color: #f2f2f2; /* Light gray */
+}
+
+input[type="email"] {
+  background-color: #e0f7fa; /* Light blue */
+}
+
+select {
+  background-color: #ffe0b2; /* Light orange */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px; /* Add margin to create space between the last form field and the button */
+}
+
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
