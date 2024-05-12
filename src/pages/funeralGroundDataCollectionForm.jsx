@@ -232,7 +232,7 @@ export const FuneralGroundDataCollectionForm = () => {
         }
 
         try {
-            const s3Response = await axios.post("https://localhost:3002/aws/upload", formData, {
+            const s3Response = await axios.post("https://admee.in:3002/aws/upload", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     "Access-Control-Allow-Origin": "*",
@@ -266,7 +266,7 @@ export const FuneralGroundDataCollectionForm = () => {
             dataObj.fees = data.fees;
             dataObj.services = data.services;
             console.log("DataOBJ Newly Created" +JSON.stringify(dataObj))
-            const dbResponse = await axios.post("https://localhost:3002/gb/funeralground", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+            const dbResponse = await axios.post("https://admee.in:3002/gb/funeralground", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
             .then((res)=> console.log(res));
 
         } catch (error) {
