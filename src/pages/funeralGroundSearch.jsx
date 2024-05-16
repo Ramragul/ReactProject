@@ -14,7 +14,7 @@ export const FuneralGroundSearch = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://localhost:3002/gb/funeralground');
+        const response = await axios.get('https://admee.in:3002/gb/funeralground');
         setFuneralGrounds(response.data.data);
         setFilteredGrounds(response.data.data);
       } catch (error) {
