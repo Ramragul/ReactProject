@@ -428,7 +428,8 @@ export const FuneralGroundDetails = () => {
         <h1 className="text-3xl font-bold mt-8 mb-4">{ground.GroundName}</h1>
         <div className="mb-8 flex justify-center">
           {/* Replace the img tag with ImageSlider component */}
-          <ImageSlider imageUrls={sampleUrls.split(',')} />
+          {/* <ImageSlider imageUrls={sampleUrls.split(',')} /> */}
+          <ImageSlider imageUrls={ground.GroundImageURL.split(',')} />
         </div>
         <div className="funeral-details">
           <div className="funeral-details-card">
