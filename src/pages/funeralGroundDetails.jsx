@@ -429,7 +429,7 @@ export const FuneralGroundDetails = () => {
         <div className="mb-8 flex justify-center">
           {/* Replace the img tag with ImageSlider component */}
           {/* <ImageSlider imageUrls={sampleUrls.split(',')} /> */}
-          <ImageSlider imageUrls={ground.GroundImageURL.split(',')} />
+         {ground.GroundImageURL != "undefined" && <ImageSlider imageUrls={ground.GroundImageURL.split(',')}  /> }
         </div>
         <div className="funeral-details">
           <div className="funeral-details-card">

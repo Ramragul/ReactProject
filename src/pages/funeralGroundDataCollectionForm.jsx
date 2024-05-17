@@ -199,14 +199,18 @@ export const FuneralGroundDataCollectionForm = () => {
     const photoInputRef = useRef(null);
     var states = ["Tamil Nadu", "Kerala", "Karnataka"];
     var cities = ["Chennai", "Trichy", "Coimbatore", "Madurai", "Tirunelveli"];
+
     var countries = ["India", "Dubai", "UK"];
 
     const [alert, setAlert] = useState(false);
+    const [responseData,setResponseData] = useState('');
+
+    const [responseStatus , setResponseStatus] = useState('');
 
     const onSubmit = async (data) => {
         console.log("Data from Form: ", data);
-        setAlert(true);
         await backendConnection(data);
+        setAlert(true);
     };
 
     const backendConnection = async (data) => {
@@ -267,10 +271,16 @@ export const FuneralGroundDataCollectionForm = () => {
             dataObj.services = data.services;
             console.log("DataOBJ Newly Created" +JSON.stringify(dataObj))
             const dbResponse = await axios.post("https://admee.in:3003/gb/funeralground", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
-            .then((res)=> console.log(res));
+            .then((res)=> {
+                console.log(res)
+                setResponseStatus(res.status === 200 ? true : false);
+                setResponseData(res)
+                
+            });
 
         } catch (error) {
             console.error('Error uploading images to AWS S3:', error);
+            setResponseData(error)
         }
     };
 
@@ -393,7 +403,8 @@ export const FuneralGroundDataCollectionForm = () => {
                     <Button variant="gradient" size="lg" className="mt-8" type="submit">
                         Register
                     </Button>
-                    {alert &&  <Alert color="green">Your Details have been submitted successfully.</Alert>}
+                    {alert && responseStatus &&  <Alert color="green">Your Details have been submitted successfully.</Alert>}
+                    {alert && !responseStatus &&  <Alert color="red"> {responseData.message}</Alert>}
                 </form>
             </div>
         </div>
