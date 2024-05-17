@@ -232,7 +232,7 @@ export const FuneralGroundDataCollectionForm = () => {
         }
 
         try {
-            const s3Response = await axios.post("https://admee.in:3002/aws/upload", formData, {
+            const s3Response = await axios.post("https://admee.in:3003/aws/upload", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     "Access-Control-Allow-Origin": "*",
