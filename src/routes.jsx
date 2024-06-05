@@ -1,4 +1,4 @@
-import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee,FuneralGroundSearch,FuneralGroundDetails,FuneralGroundDataCollectionForm,AdmeeDataCollectionForm, CCDesignCatalogueForm, CCDesignCatalougeForm} from "@/pages";
+import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee,FuneralGroundSearch,FuneralGroundDetails,FuneralGroundDataCollectionForm,AdmeeDataCollectionForm, CCDesignCatalougeForm} from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
