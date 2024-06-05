@@ -9,3 +9,4 @@ export * from "@/pages/funeralGroundSearch";
 export * from "@/pages/funeralGroundDetails";
 export * from "@/pages/funeralGroundDataCollectionForm";
 export * from "@/pages/admeeDataCollectionForm";
+export * from "@/pages/ccDesignCatalogueForm"
