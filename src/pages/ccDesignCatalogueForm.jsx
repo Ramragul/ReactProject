@@ -15,7 +15,8 @@ import {
     Alert
 } from "@material-tailwind/react";
 
-export const CCDesignCatalougeForm = () => {
+export const CCDesignCatalogueForm = () => {
+         
     const { register, handleSubmit } = useForm();
     const photoInputRef = useRef(null);
 
@@ -235,3 +236,4 @@ export const CCDesignCatalougeForm = () => {
 };
 
 export default CCDesignCatalogueForm;
+               
