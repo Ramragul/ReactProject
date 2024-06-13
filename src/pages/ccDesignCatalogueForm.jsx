@@ -20,11 +20,18 @@ export const CCDesignCatalogueForm = () => {
     const { register, handleSubmit } = useForm();
     const photoInputRef = useRef(null);
 
-    var userType = ["Owner","Driver","Rented Guest"];
-    var advertisementType = ["Car", "Auto", "Lorry", "Bus", "Mini Door" , "Bike" , "Home", "Office"];
-    var advertisementCategory = ["Own" , "Commercial"];
-    var cities = ["Chennai", "Trichy", "Coimbatore", "Madurai", "Tirunelveli"];
-    var states = ["Tamil Nadu", "Kerala", "Karnataka"];
+    var productPriceBand = ["A","B","C","D","E","F","G"];
+
+    var productCategory = [
+        {"id": 1 , "name" : "Blouse"},
+        {"id": 2 , "name" : "Aari"},
+        {"id": 3 , "name" : "Chudi"},
+        {"id": 4 , "name" : "Lehenga"},
+        {"id": 5 , "name" : "Shirt"},
+        {"id": 6 , "name" : "Pant"},
+    ]
+
+    const productUsageOccasion = ["Party","Festival","Wedding","Celebrations","Casual", "Formal","Regular","Trendy","Tradational","Glamour"];
 
     var countries = ["India", "Dubai", "UK"];
 
@@ -33,11 +40,22 @@ export const CCDesignCatalogueForm = () => {
 
     const [responseStatus , setResponseStatus] = useState('');
 
+    const [selectedProductCategories, setSelectedProductCategories] = useState([]);
+
     const onSubmit = async (data) => {
         console.log("Data from Form: ", data);
-        await backendConnection(data);
+       await backendConnection(data);
         setAlert(true);
     };
+
+    const handleProductUsageOccasionCheckboxChange = (event) => {
+        const { value, checked } = event.target;
+        if (checked) {
+          setSelectedProductCategories([...selectedProductCategories, value]);
+        } else {
+          setSelectedProductCategories(selectedProductCategories.filter((category) => category !== value));
+        }
+      };
 
     const backendConnection = async (data) => {
         const formData = new FormData();
@@ -63,26 +81,19 @@ export const CCDesignCatalogueForm = () => {
             const concatImageURLS = s3Response.data.imageURLs
 
             let dataObj = {}
-            dataObj.partnerPhotos = concatImageURLS;
-            dataObj.partnerName = data.partnerName;
-            dataObj.partnerPhoneNumber = data.partnerPhoneNumber;
-            dataObj.partnerType = data.partnerType;
-            dataObj.partnerAdvertisementCategory = data.partnerAdvertisementCategory;
-            dataObj.partnerAdvertisementType = data.partnerAdvertisementType;
-            dataObj.partnerVehicleNumber = data.partnerVehicleNumber;
-            dataObj.partnerAvailability = data.partnerAvailability;
-            dataObj.email = data.email;
-            dataObj.pincode = data.pincode;
-            dataObj.city = data.city;
-            dataObj.state = data.state;
-            dataObj.country = data.country;
-            dataObj.address = data.address;
-            dataObj.areaCoverage = data.areaCoverage;
-            dataObj.expectedAmount = data.expectedAmount;
-            dataObj.landmark = data.landmark;
+            dataObj.productImageURL = concatImageURLS;
+            dataObj.productName = data.productName;
+            dataObj.productUsageGender = data.productUsageGender;
+            dataObj.productUsageOccasion = data.productUsageOccasion;
+            dataObj.productOrigin = data.productOrigin;
+            dataObj.productCategory = data.productCategory;
+            //dataObj.productCategoryID = data.productCategory.id
+            dataObj.productPriceBand = data.productPriceBand;
+            dataObj.productPrice = data.productPrice;
             dataObj.remarks = data.remarks;
+           
             console.log("Full Data Created" +JSON.stringify(dataObj))
-            const dbResponse = await axios.post("https://admee.in:3003/admee/partner/registration", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+            const dbResponse = await axios.post("https://admee.in:3003/api/cc/designcatalogue", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
             .then((res)=> {
                 console.log(res)
                 setResponseStatus(res.status === 200 ? true : false);
@@ -99,125 +110,76 @@ export const CCDesignCatalogueForm = () => {
     return (
         <div>
             <div className="funeral-data-collection">
-                <h2 style={{ marginTop: '70px' }} className="page-title">Admee Data Collection</h2>
+                <h2 style={{ marginTop: '70px' }} className="page-title">Design Catalogue Data Upload form</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
-                        <label>Photos:</label>
+                        <label>Product Photos:</label>
                         <input {...register('photos')} type="file" accept="image/*" multiple />
                     </div>
                     <div className="form-group">
                         <label>Name:</label>
-                        <input {...register('partnerName')} type="text"/>
+                        <input {...register('productName')} type="text"/>
                     </div>
                     <div className="form-group">
-                        <label>Phone Number:</label>
-                        <input {...register('partnerPhoneNumber')} type="text" />
+                        <label>Product Origin:</label>
+                        <input {...register('productOrigin')} type="text" />
                     </div>
-                    <div className="form-group">
-                        <label>Type:</label>
-                        <select {...register('partnerType')}>
-                            <option value="">Select User Type</option>
-                            {userType.map((type, index) => (
-                                <option key={index} value={type}>
-                                    {type}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
                     <div className="form-group">
                         <label>Type:</label>
-                        <select {...register('partnerAdvertisementType')}>
-                            <option value="">Select Type</option>
-                            {advertisementType.map((type, index) => (
-                                <option key={index} value={type}>
-                                    {type}
+                        <select {...register('productCategory')}>
+                            <option value="">Select Product Category</option>
+                            {productCategory.map((category, index) => (
+                                <option key={category.id} value={category.name}>
+                                    {category.name}
                                 </option>
                             ))}
                         </select>
                     </div>
 
+
+
                     <div className="form-group">
-                        <label>Advertisement Category:</label>
-                        <select {...register('partnerAdvertisementCategory')}>
-                            <option value="">Select Category</option>
-                            {advertisementCategory.map((category, index) => (
-                                <option key={index} value={category}>
-                                    {category}
+                        <label>Product Usage Gender:</label>
+                        <input {...register('productUsageGender')} type="text"/>
+                    </div>
+
+                    <div className="form-group">
+                    <label>Product Usage Occasion</label>
+                    {productUsageOccasion.map((option, index) => (
+                    <div key={index}>
+                        <label>
+                        <input
+                            type="checkbox"
+                            value={option}
+                            onChange={handleProductUsageOccasionCheckboxChange}
+                            {...register('productUsageOccasion')}
+                        />
+                        {option}
+                        </label>
+                    </div>
+                    ))}
+                   </div>
+
+                    <div className="form-group">
+                        <label>Type:</label>
+                        <select {...register('productPriceBand')}>
+                            <option value="">Select Product Category</option>
+                            {productPriceBand.map((priceBand, index) => (
+                                <option key={index} value={priceBand}>
+                                    {priceBand}
                                 </option>
                             ))}
                         </select>
                     </div>
-                    <div className="form-group">
-                        <label>Vehicle Number </label>
-                        <input {...register('partnerVehicleNumber')} type="text"/>
-                    </div>
-                    <div className="form-group">
-                        <label>Partner Availability </label>
-                        <input {...register('partnerAvailability')} type="text"/>
-                    </div>
-
    
                     <div className="form-group">
-                        <label>Email:</label>
-                        <input {...register('email')} type="email"/>
+                        <label>Product Price:</label>
+                        <input {...register('productPrice')} type="text"/>
                     </div>
  
-                    <div className="form-group">
-                        <label>Address:</label>
-                        <input {...register('address')} type="text"/>
-                    </div>
-                    <div className="form-group">
-                        <label>City:</label>
-                        <select {...register('city')}>
-                            <option value="">Select City</option>
-                            {cities.map((city,index)=>(
-                                <option key={index} value={city}>
-                                    {city}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label>State:</label>
-                        <select {...register('state')}>
-                            <option value="">Select State</option>
-                            {states.map((state, index) => (
-                                <option key={index} value={state}>
-                                    {state}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label>Country:</label>
-                        <select {...register('country')}>
-                            <option value="">Select Country</option>
-                            {countries.map((country,index)=>(
-                                <option key={index} value={country}>
-                                    {country}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                  
 
-                    <div className="form-group">
-                        <label>Pincode:</label>
-                        <input {...register('pincode')} type="text"/>
-                    </div>
 
-                    <div className="form-group">
-                        <label>Area Covered:</label>
-                        <input {...register('areaCoverage')} type="text"/>
-                    </div>
-                    <div className="form-group">
-                        <label>Landmark:</label>
-                        <input {...register('landmark')} type="text"/>
-                    </div>
-                    <div className="form-group">
-                        <label>Expected Amount</label>
-                        <input {...register('expectedAmount')} type="text"/>
-                    </div>
 
 
                     <div className="form-group">
@@ -225,7 +187,7 @@ export const CCDesignCatalogueForm = () => {
                         <Textarea {...register('remarks')}  size="lg" label="Message" rows={5} />
                     </div>
                     <Button variant="gradient" size="lg" className="mt-8" type="submit">
-                        Register
+                        Upload Product
                     </Button>
                     {alert && responseStatus &&  <Alert color="green">Your Details have been submitted successfully.</Alert>}
                     {alert && !responseStatus &&  <Alert color="red"> {responseData.message}</Alert>}
