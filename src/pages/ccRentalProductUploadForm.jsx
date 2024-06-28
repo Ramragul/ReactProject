@@ -23,12 +23,11 @@ export const CCRentalProductUploadForm = () => {
     var productPriceBand = ["A","B","C","D","E","F","G"];
 
     var productCategory = [
-        {"id": 1 , "name" : "Blouse"},
-        {"id": 2 , "name" : "Aari"},
-        {"id": 3 , "name" : "Chudi"},
-        {"id": 4 , "name" : "Lehenga"},
-        {"id": 5 , "name" : "Shirt"},
-        {"id": 6 , "name" : "Pant"},
+        {"id": 1 , "name" : "Blazzer"},
+        {"id": 2 , "name" : "IndoWestern"},
+        {"id": 3 , "name" : "Pyjama"},
+        {"id": 4 , "name" : "Sharwani"},
+        {"id": 5 , "name" : "Suits"},
     ]
 
     const productUsageOccasion = ["Party","Festival","Wedding","Celebrations","Casual", "Formal","Regular","Trendy","Tradational","Glamour","Bridal"];
@@ -90,6 +89,8 @@ export const CCRentalProductUploadForm = () => {
             //dataObj.productCategoryID = data.productCategory.id
             dataObj.productPriceBand = data.productPriceBand;
             dataObj.productPrice = data.productPrice;
+            dataObj.productRentalPrice = data.productRentalPrice;
+            dataObj.productAvailability = data.productAvailability;
             dataObj.remarks = data.remarks;
            
             console.log("Full Data Created" +JSON.stringify(dataObj))
@@ -175,6 +176,10 @@ export const CCRentalProductUploadForm = () => {
                     <div className="form-group">
                         <label>Product Price:</label>
                         <input {...register('productPrice')} type="text"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Product Rental Price:</label>
+                        <input {...register('productRentalPrice')} type="text"/>
                     </div>
  
                   
