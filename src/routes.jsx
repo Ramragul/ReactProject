@@ -1,4 +1,4 @@
-import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee,FuneralGroundSearch,FuneralGroundDetails,FuneralGroundDataCollectionForm,AdmeeDataCollectionForm, CCDesignCatalogueForm} from "@/pages";
+import { Home, Profile, SignIn, SignUp , Services,ContactUs,Admee,FuneralGroundSearch,FuneralGroundDetails,FuneralGroundDataCollectionForm,AdmeeDataCollectionForm, CCDesignCatalogueForm , CCRentalProductUploadForm} from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
@@ -78,6 +78,13 @@ export const routes = [
     name: "CCDesignCatalogueForm",
     path: "/cc/design/form",
     element: <CCDesignCatalogueForm />,
+    visible: false,
+  },
+  {
+    icon: "",
+    name: "CCRentalProductUploadForm",
+    path: "/cc/rental/product/upload/form",
+    element: <CCRentalProductUploadForm />,
     visible: false,
   },
   // {

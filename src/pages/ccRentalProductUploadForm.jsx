@@ -15,7 +15,7 @@ import {
     Alert
 } from "@material-tailwind/react";
 
-export const CCDesignCatalogueForm = () => {
+export const CCRentalProductUploadForm = () => {
          
     const { register, handleSubmit } = useForm();
     const photoInputRef = useRef(null);
@@ -23,12 +23,11 @@ export const CCDesignCatalogueForm = () => {
     var productPriceBand = ["A","B","C","D","E","F","G"];
 
     var productCategory = [
-        {"id": 1 , "name" : "Blouse"},
-        {"id": 2 , "name" : "Aari"},
-        {"id": 3 , "name" : "Chudi"},
-        {"id": 4 , "name" : "Lehenga"},
-        {"id": 5 , "name" : "Shirt"},
-        {"id": 6 , "name" : "Pant"},
+        {"id": 1 , "name" : "Blazzer"},
+        {"id": 2 , "name" : "IndoWestern"},
+        {"id": 3 , "name" : "Pyjama"},
+        {"id": 4 , "name" : "Sharwani"},
+        {"id": 5 , "name" : "Suits"},
     ]
 
     const productUsageOccasion = ["Party","Festival","Wedding","Celebrations","Casual", "Formal","Regular","Trendy","Tradational","Glamour","Bridal"];
@@ -90,10 +89,12 @@ export const CCDesignCatalogueForm = () => {
             //dataObj.productCategoryID = data.productCategory.id
             dataObj.productPriceBand = data.productPriceBand;
             dataObj.productPrice = data.productPrice;
+            dataObj.productRentalPrice = data.productRentalPrice;
+            dataObj.productAvailability = "Yes";
             dataObj.remarks = data.remarks;
            
             console.log("Full Data Created" +JSON.stringify(dataObj))
-            const dbResponse = await axios.post("https://admee.in:3003/api/cc/designcatalogue", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
+            const dbResponse = await axios.post("https://admee.in:3003/api/cc/rental/product/upload", dataObj,{headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"}})
             .then((res)=> {
                 console.log(res)
                 setResponseStatus(res.status === 200 ? true : false);
@@ -176,6 +177,10 @@ export const CCDesignCatalogueForm = () => {
                         <label>Product Price:</label>
                         <input {...register('productPrice')} type="text"/>
                     </div>
+                    <div className="form-group">
+                        <label>Product Rental Price:</label>
+                        <input {...register('productRentalPrice')} type="text"/>
+                    </div>
  
                   
 
@@ -197,5 +202,5 @@ export const CCDesignCatalogueForm = () => {
     );
 };
 
-export default CCDesignCatalogueForm;
+export default CCRentalProductUploadForm;
                
