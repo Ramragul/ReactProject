@@ -77,6 +77,11 @@ export const CCRentalProductUploadForm = () => {
                 }
             });
             console.log(s3Response.data);
+            } catch (error) {
+            console.error('Error uploading images to AWS S3:', error);
+            setResponseData(error)
+            }
+            try {
             const concatImageURLS = s3Response.data.imageURLs
 
             let dataObj = {}
@@ -103,7 +108,7 @@ export const CCRentalProductUploadForm = () => {
             });
 
         } catch (error) {
-            console.error('Error uploading images to AWS S3:', error);
+            console.error('Error uploading images to DB :' +error);
             setResponseData(error)
         }
     };
