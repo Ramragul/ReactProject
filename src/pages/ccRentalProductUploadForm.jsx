@@ -77,11 +77,6 @@ export const CCRentalProductUploadForm = () => {
                 }
             });
             console.log(s3Response.data);
-            } catch (error) {
-            console.error('Error uploading images to AWS S3:', error);
-            setResponseData(error)
-            }
-            try {
             const concatImageURLS = s3Response.data.imageURLs
 
             let dataObj = {}
@@ -94,8 +89,6 @@ export const CCRentalProductUploadForm = () => {
             //dataObj.productCategoryID = data.productCategory.id
             dataObj.productPriceBand = data.productPriceBand;
             dataObj.productPrice = data.productPrice;
-            dataObj.productRentalPrice = data.productRentalPrice;
-            dataObj.productAvailability = "Yes";
             dataObj.remarks = data.remarks;
            
             console.log("Full Data Created" +JSON.stringify(dataObj))
@@ -108,7 +101,7 @@ export const CCRentalProductUploadForm = () => {
             });
 
         } catch (error) {
-            console.error('Error uploading images to DB :' +error);
+            console.error('Error uploading images to AWS S3:', error);
             setResponseData(error)
         }
     };
