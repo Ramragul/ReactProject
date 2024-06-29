@@ -284,7 +284,7 @@ export const FuneralGroundDataCollectionForm = () => {
             });
 
         } catch (error) {
-            console.error('Error uploading images to AWS S3:', error);
+            console.error('Error uploading data to aws table', error);
             setResponseData(error)
         }
     };
