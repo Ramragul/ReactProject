@@ -82,6 +82,7 @@ export const CCRentalProductUploadForm = () => {
             let dataObj = {}
             dataObj.productImageURL = concatImageURLS;
             dataObj.productName = data.productName;
+            dataObj.productBrandName = data.productBrandName;
             dataObj.productUsageGender = data.productUsageGender;
             dataObj.productUsageOccasion = data.productUsageOccasion;
             dataObj.productOrigin = data.productOrigin;
@@ -89,7 +90,7 @@ export const CCRentalProductUploadForm = () => {
             //dataObj.productCategoryID = data.productCategory.id
             dataObj.productPriceBand = data.productPriceBand;
             dataObj.productPrice = data.productPrice;
-            dataObj.productRentalPrice = data.productRentalPrice;
+            dataObj.productPurchasePrice = data.productPurchasePrice;
             dataObj.productAvailability = data.productAvailability;
             dataObj.remarks = data.remarks;
            
@@ -120,6 +121,10 @@ export const CCRentalProductUploadForm = () => {
                     <div className="form-group">
                         <label>Name:</label>
                         <input {...register('productName')} type="text"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Brand Name:</label>
+                        <input {...register('productBrandName')} type="text"/>
                     </div>
                     <div className="form-group">
                         <label>Product Origin:</label>
@@ -174,12 +179,12 @@ export const CCRentalProductUploadForm = () => {
                     </div>
    
                     <div className="form-group">
-                        <label>Product Price:</label>
-                        <input {...register('productPrice')} type="text"/>
+                        <label>Product Purchase Price:</label>
+                        <input {...register('productPurchasePrice')} type="text"/>
                     </div>
                     <div className="form-group">
                         <label>Product Rental Price:</label>
-                        <input {...register('productRentalPrice')} type="text"/>
+                        <input {...register('productPrice')} type="text"/>
                     </div>
  
                   
