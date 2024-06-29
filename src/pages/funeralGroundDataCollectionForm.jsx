@@ -201,6 +201,7 @@ export const FuneralGroundDataCollectionForm = () => {
     var cities = ["Chennai", "Trichy", "Coimbatore", "Madurai", "Tirunelveli"];
 
     var countries = ["India", "Dubai", "UK"];
+    var concatImageURLS = ""
 
     const [alert, setAlert] = useState(false);
     const [responseData,setResponseData] = useState('');
@@ -244,12 +245,13 @@ export const FuneralGroundDataCollectionForm = () => {
                 }
             });
             console.log("S3 Response "+JSON.stringify(s3Response.data));
+            concatImageURLS = s3Response.data.imageURLs
             
         } catch (error) {
             console.error('Error uploading images to AWS S3:', error);
             setResponseData(error)
         }
-        const concatImageURLS = s3Response.data.imageURLs
+         
         try {
             
             let dataObj = {}
