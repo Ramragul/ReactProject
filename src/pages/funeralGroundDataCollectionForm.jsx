@@ -245,7 +245,12 @@ export const FuneralGroundDataCollectionForm = () => {
             });
             console.log(s3Response.data);
             const concatImageURLS = s3Response.data.imageURLs
-
+        } catch (error) {
+            console.error('Error uploading images to AWS S3:', error);
+            setResponseData(error)
+        }
+           
+        try {
             let dataObj = {}
             dataObj.groundPhotos = concatImageURLS;
             dataObj.groundName = data.groundName;
