@@ -243,7 +243,7 @@ export const FuneralGroundDataCollectionForm = () => {
                     "Access-Control-Allow-Methods": "PUT,POST,PATCH,DELETE,GET"
                 }
             });
-            console.log(s3Response.data);
+            console.log("S3 Response "+JSON.stringify(s3Response.data));
             
         } catch (error) {
             console.error('Error uploading images to AWS S3:', error);
