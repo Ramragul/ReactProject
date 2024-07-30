@@ -28,6 +28,7 @@ export const CCRentalProductUploadForm = () => {
         {"id": 3 , "name" : "Pyjama"},
         {"id": 4 , "name" : "Sharwani"},
         {"id": 5 , "name" : "Suits"},
+        {"id": 6 , "name" : "Lehenga"},
     ]
 
     const productUsageOccasion = ["Party","Festival","Wedding","Celebrations","Casual", "Formal","Regular","Trendy","Tradational","Glamour","Bridal"];
