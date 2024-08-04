@@ -21,6 +21,8 @@ export const CCRentalProductUploadForm = () => {
     const photoInputRef = useRef(null);
 
     var productPriceBand = ["A","B","C","D","E","F","G"];
+    
+    var productType = ["Apparel","Jewellery"]
 
     var productCategory = [
         {"id": 1 , "name" : "Blazzer"},
@@ -29,6 +31,9 @@ export const CCRentalProductUploadForm = () => {
         {"id": 4 , "name" : "Sharwani"},
         {"id": 5 , "name" : "Suits"},
         {"id": 6 , "name" : "Lehenga"},
+        {"id": 7 , "name" : "Choker"},
+        {"id": 8 , "name" : "Bangles"},
+        {"id": 9 , "name" : "BridalSet"},
     ]
 
     const productUsageOccasion = ["Party","Festival","Wedding","Celebrations","Casual", "Formal","Regular","Trendy","Tradational","Glamour","Bridal"];
@@ -83,6 +88,7 @@ export const CCRentalProductUploadForm = () => {
             let dataObj = {}
             dataObj.productImageURL = concatImageURLS;
             dataObj.productName = data.productName;
+            dataObj.productType = data.productType;
             dataObj.productBrandName = data.productBrandName;
             dataObj.productUsageGender = data.productUsageGender;
             dataObj.productUsageOccasion = data.productUsageOccasion;
@@ -122,6 +128,17 @@ export const CCRentalProductUploadForm = () => {
                     <div className="form-group">
                         <label>Name:</label>
                         <input {...register('productName')} type="text"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Product Type:</label>
+                        <select {...register('productType')}>
+                            <option value="">Select Product Type</option>
+                            {productType.map((productType, index) => (
+                                <option key={index} value={productType}>
+                                    {productType}
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className="form-group">
                         <label>Brand Name:</label>
