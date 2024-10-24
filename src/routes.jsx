@@ -29,7 +29,7 @@ export const routes = [
     name: "services",
     path: "/services",
     element: <Services />,
-    visible: false,
+    visible: true,
   },
   {
     icon: UsersIcon,
