@@ -77,31 +77,54 @@ export const Services = () => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
           <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-pink-200">
             <h3 className="text-xl font-bold mb-3 text-center">Classic Package</h3>
-            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹10,000 INR</span></p>
+            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹9999</span></p>
             <ul className="text-left mb-6">
-              <li className="list-disc list-inside">Service 1</li>
-              <li className="list-disc list-inside">Service 2</li>
-              <li className="list-disc list-inside">Service 3</li>
+              <li className="list-disc list-inside">Freezer Box</li>
+              <li className="list-disc list-inside">Simple Floral Decorations</li>
+              <li className="list-disc list-inside">Funeral Ground Bookings</li>
+              <li className="list-disc list-inside">Funeral Rituals</li>
+              <li className="list-disc list-inside">Funeral Van</li>
+              <li className="list-disc list-inside">Cremation</li>
+              <li className="list-disc list-inside">Death Certificate Registration and Support</li>
             </ul>
             <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full block mx-auto">Select</button>
           </div>
           <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-grey-200">
             <h3 className="text-xl font-bold mb-3 text-center">Silver Package</h3>
-            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹20,000 INR</span></p>
+            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹19,999</span></p>
             <ul className="text-left mb-6">
-              <li className="list-disc list-inside">Service 1</li>
-              <li className="list-disc list-inside">Service 2</li>
-              <li className="list-disc list-inside">Service 3</li>
+            <li className="list-disc list-inside">Freezer Box</li>
+              <li className="list-disc list-inside">Moderate Floral Decorations</li>
+              <li className="list-disc list-inside">Funeral Ground Bookings</li>
+              <li className="list-disc list-inside">Funeral Rituals</li>
+              <li className="list-disc list-inside">Funeral Van</li>
+              <li className="list-disc list-inside">Cremation</li>
+              <li className="list-disc list-inside">Drinking Water </li>
+              <li className="list-disc list-inside">Pandal and Chair Arrangements </li>
+              <li className="list-disc list-inside">Funeral Music Arrangements</li>
+              <li className="list-disc list-inside">Death Certificate Registration and Support</li>
+              <li className="list-disc list-inside">One Complimentary Doctor-Led Counseling Session for Family Healing and Support</li>
             </ul>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mx-auto">Select</button>
           </div>
           <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-amber-200">
             <h3 className="text-xl font-bold mb-3 text-center">Gold Package</h3>
-            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹30,000 INR</span></p>
-            <ul className="text-left mb-6">
-              <li className="list-disc list-inside">Service 1</li>
-              <li className="list-disc list-inside">Service 2</li>
-              <li className="list-disc list-inside">Service 3</li>
+            <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹29,999</span></p>
+            <li className="list-disc list-inside">Freezer Box</li>
+              <li className="list-disc list-inside">Grand Floral Decorations</li>
+              <li className="list-disc list-inside">Funeral Ground Bookings</li>
+              <li className="list-disc list-inside">Funeral Rituals</li>
+              <li className="list-disc list-inside">Funeral Van</li>
+              <li className="list-disc list-inside">Cremation</li>
+              <li className="list-disc list-inside">Drinking Water </li>
+              <li className="list-disc list-inside">Pandal and Chair Arrangements </li>
+              <li className="list-disc list-inside">Funeral Music Arrangements</li>
+              <li className="list-disc list-inside">Cracker Firings</li>
+              <li className="list-disc list-inside">Coffee/Tea for 50 people</li>
+              <li className="list-disc list-inside">Breakfast for 50 people</li>
+              <li className="list-disc list-inside">Death Certificate Registration and Support</li>
+              <li className="list-disc list-inside">One Complimentary Doctor-Led Counseling Session for Family Healing and Support</li>
+
             </ul>
             <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full block mx-auto">Select</button>
           </div>
