@@ -110,6 +110,7 @@ export const Services = () => {
           <div className="service-package md:w-1/3 rounded-lg shadow-lg p-6 bg-amber-200">
             <h3 className="text-xl font-bold mb-3 text-center">Gold Package</h3>
             <p className="text-center mb-3"><span className="font-bold text-lg">Price: ₹29,999</span></p>
+            <ul className="text-left mb-6">
             <li className="list-disc list-inside">Freezer Box</li>
               <li className="list-disc list-inside">Grand Floral Decorations</li>
               <li className="list-disc list-inside">Funeral Ground Bookings</li>
