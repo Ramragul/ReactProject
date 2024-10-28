@@ -10,11 +10,10 @@ import {
 export const featuresData = [
   {
     color: "blue",
-    title: "Contact Us",
+    title: "Funeral Ground Search",
     icon: StarIcon,
-    navPage: "/contact",
-    description:
-      "For Funeral Booking and Queries : +1 12345678",
+    navPage: "/funeralground",
+    description:"Search Your Nearby Funeral Ground",
   },
   {
     color: "red",

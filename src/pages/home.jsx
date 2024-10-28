@@ -84,7 +84,7 @@ export function Home() {
                 Book a service with us and stay relaxed.
               
               </Typography>
-              <Button variant="outlined">Book Now</Button>
+              <Button variant="outlined" onClick={()=>navigate('/contact')}>Book Now</Button>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
               <Card className="shadow-lg shadow-gray-500/10">
@@ -114,11 +114,11 @@ export function Home() {
                     color="dark-purple"
                     className="mb-3"
                   >
-                  1. Budget Package  - 10000 rs
+                  1. Budget Package  - 9999 rs
                   <br/>
-                  2. Classic Package - 20000 rs
+                  2. Classic Package - 19999 rs
                   <br/>
-                  3. Elite Package   - 30000 rs
+                  3. Elite Package   - 29999 rs
                   <br/>
                   </Typography>
                   <br/>

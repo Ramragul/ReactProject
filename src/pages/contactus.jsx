@@ -128,7 +128,7 @@ export const ContactUs = () => {
             </div>
             <Textarea {...register('message')}  size="lg" label="Message" rows={2} />
             <Button variant="gradient" size="lg" className="mt-8" type="submit">
-              Book
+              Book Funeral
             </Button>
             {/* <Button onClick={() => navigate('/home')}>
             POSTNAVII
