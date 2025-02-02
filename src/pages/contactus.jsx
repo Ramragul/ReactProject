@@ -127,22 +127,34 @@ export const ContactUs = () => {
     </select>
             </div> */}
 
-<div className="mb-8 flex gap-8">
-  <label style={{ color: '#4B5563', fontSize: '1rem', fontWeight: '600' }} htmlFor="religion">Religion</label>
+<div className="mb-8 flex items-center gap-8">
+  <label 
+    style={{ 
+      color: '#4B5563', 
+      fontSize: '1rem', 
+      fontWeight: '600', 
+      lineHeight: '1.5', // Ensuring the label has a consistent height
+      marginRight: '8px', // Slight margin to separate label from select box
+    }} 
+    htmlFor="religion"
+  >
+    Religion
+  </label>
   
   <select
     {...register('religion')}
     style={{
-      backgroundColor: '#f9fafb', // Subtle background
-      border: '1px solid #D1D5DB', // Lighter border
+      backgroundColor: '#f9fafb', // Soft background color
+      border: '1px solid #D1D5DB', // Subtle border
       borderRadius: '8px', // Rounded corners
-      color: '#374151', // Text color to improve contrast
-      padding: '0.75rem 1rem', // Better padding for a more spacious feel
-      fontSize: '1rem', // Consistent font size
+      color: '#374151', // Text color
+      padding: '0.75rem 1rem', // Comfortable padding
+      fontSize: '1rem', 
       fontWeight: '500',
-      outline: 'none', // Removes default outline on focus
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Soft shadow for depth
-      transition: 'all 0.3s ease', // Smooth transition on hover/focus
+      outline: 'none',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Depth effect
+      transition: 'all 0.3s ease',
+      height: '40px', // Set a fixed height to match the label height
     }}
     onFocus={(e) => e.target.style.boxShadow = '0 2px 10px rgba(37, 99, 235, 0.4)'} // Focus effect
     onBlur={(e) => e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'} // Reset focus effect
@@ -154,6 +166,7 @@ export const ContactUs = () => {
     <option value="others">Others</option>
   </select>
 </div>
+
 
             <div className="mb-8 flex gap-8">
               <Input {...register('caste')}  size="lg" label="Caste" />
