@@ -107,20 +107,16 @@ export const ContactUs = () => {
             <div className="mb-8 flex gap-8">
               <Input {...register('city')}  size="lg" label="City" />
             </div>
-            <div className="mb-8 flex gap-8" >
+            {/* <div className="mb-8 flex gap-8" >
             <label style ={{color:'dark-grey'}} variant="standard" size="lg">Religion</label>
-            {/* <select {...register('category')} variant="standard" size="lg">
-               <option value="budget">Budget Package</option>
-               <option value="classic">Classic Package</option>
-               <option value="elite">Elite Package</option>
-            </select> */}
+ 
              <select {...register('religion')}
       style={{
         backgroundColor: '#f3f4f6', // Set background color
         border: '1px solid #e5e7eb', // Set border
         borderRadius: '0.25rem', // Add border radius for rounded corners
        // padding: '0.5rem', // Add padding for better spacing
-        color: 'purple',
+        color: 'green',
       }}
     >
       <option value="hindu"> Hindu </option>
@@ -129,7 +125,36 @@ export const ContactUs = () => {
       <option value="buddhist">Buddhist</option>
       <option value="others">Others</option>
     </select>
-            </div>
+            </div> */}
+
+<div className="mb-8 flex gap-8">
+  <label style={{ color: '#4B5563', fontSize: '1rem', fontWeight: '600' }} htmlFor="religion">Religion</label>
+  
+  <select
+    {...register('religion')}
+    style={{
+      backgroundColor: '#f9fafb', // Subtle background
+      border: '1px solid #D1D5DB', // Lighter border
+      borderRadius: '8px', // Rounded corners
+      color: '#374151', // Text color to improve contrast
+      padding: '0.75rem 1rem', // Better padding for a more spacious feel
+      fontSize: '1rem', // Consistent font size
+      fontWeight: '500',
+      outline: 'none', // Removes default outline on focus
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Soft shadow for depth
+      transition: 'all 0.3s ease', // Smooth transition on hover/focus
+    }}
+    onFocus={(e) => e.target.style.boxShadow = '0 2px 10px rgba(37, 99, 235, 0.4)'} // Focus effect
+    onBlur={(e) => e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'} // Reset focus effect
+  >
+    <option value="hindu">Hindu</option>
+    <option value="christian">Christian</option>
+    <option value="muslim">Muslim</option>
+    <option value="buddhist">Buddhist</option>
+    <option value="others">Others</option>
+  </select>
+</div>
+
             <div className="mb-8 flex gap-8">
               <Input {...register('caste')}  size="lg" label="Caste" />
             </div>
