@@ -147,8 +147,8 @@ export const ContactUs = () => {
       backgroundColor: '#f9fafb', // Soft background color
       border: '1px solid #D1D5DB', // Subtle border
       borderRadius: '8px', // Rounded corners
-      color: '#374151', // Text color
-      padding: '0.75rem 1rem', // Comfortable padding
+      color: '#5f5279', // Text color
+      padding: '0.5rem 1rem', // Comfortable padding
       fontSize: '1rem', 
       fontWeight: '500',
       outline: 'none',
@@ -172,14 +172,22 @@ export const ContactUs = () => {
               <Input {...register('caste')}  size="lg" label="Caste" />
             </div>
 
-            <div className="mb-8 flex gap-8" >
-            <label style ={{color:'dark-grey'}} variant="standard" size="lg">Category</label>
-            {/* <select {...register('category')} variant="standard" size="lg">
-               <option value="budget">Budget Package</option>
-               <option value="classic">Classic Package</option>
-               <option value="elite">Elite Package</option>
-            </select> */}
-             <select {...register('category')}
+            <div className="mb-8 flex items-center gap-8">
+            {/* <label style ={{color:'dark-grey'}} variant="standard" size="lg">Category</label> */}
+            <label 
+    style={{ 
+      color: '#4B5563', 
+      fontSize: '0.85rem', 
+      fontWeight: '600', 
+      lineHeight: '1.5', // Ensuring the label has a consistent height
+      marginRight: '8px', // Slight margin to separate label from select box
+    }} 
+    htmlFor="category"
+  >
+    Category
+  </label>
+
+             {/* <select {...register('category')}
       style={{
         backgroundColor: '#f3f4f6', // Set background color
         border: '1px solid #e5e7eb', // Set border
@@ -187,10 +195,28 @@ export const ContactUs = () => {
        // padding: '0.5rem', // Add padding for better spacing
         color: 'purple',
       }}
-    >
-      <option value="budget">Budget Package - ₹9999 </option>
-      <option value="classic">Classic Package -₹19999</option>
-      <option value="elite">Elite Package - ₹29999</option>
+    > */}
+      <select
+    {...register('category')}
+    style={{
+      backgroundColor: '#f9fafb', // Soft background color
+      border: '1px solid #D1D5DB', // Subtle border
+      borderRadius: '8px', // Rounded corners
+      color: '#5f5279', // Text color
+      padding: '0.5rem 1rem', // Comfortable padding
+      fontSize: '1rem', 
+      fontWeight: '500',
+      outline: 'none',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Depth effect
+      transition: 'all 0.3s ease',
+      height: '40px', // Set a fixed height to match the label height
+    }}
+    onFocus={(e) => e.target.style.boxShadow = '0 2px 10px rgba(37, 99, 235, 0.4)'} // Focus effect
+    onBlur={(e) => e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'} // Reset focus effect
+  >
+      <option value="budget">Budget Package  ₹9999 </option>
+      <option value="classic">Classic Package  ₹19999</option>
+      <option value="elite">Elite Package  ₹29999</option>
     </select>
             </div>
             <Textarea {...register('message')}  size="lg" label="Message" rows={2} />
