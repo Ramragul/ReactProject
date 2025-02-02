@@ -42,7 +42,9 @@ export const ContactUs = () => {
     dataObj.city = data.city;
     dataObj.mobileNumber = data.mobileNumber;
     dataObj.message = data.message;
-    dataObj.category = data.category
+    dataObj.category = data.category;
+    dataObj.religion = data.religion;
+    dataObj.caste = data.caste;
     console.log("Backend Data Object")
     console.log(JSON.stringify(dataObj))
 
@@ -106,6 +108,33 @@ export const ContactUs = () => {
               <Input {...register('city')}  size="lg" label="City" />
             </div>
             <div className="mb-8 flex gap-8" >
+            <label style ={{color:'dark-grey'}} variant="standard" size="lg">Religion</label>
+            {/* <select {...register('category')} variant="standard" size="lg">
+               <option value="budget">Budget Package</option>
+               <option value="classic">Classic Package</option>
+               <option value="elite">Elite Package</option>
+            </select> */}
+             <select {...register('religion')}
+      style={{
+        backgroundColor: '#f3f4f6', // Set background color
+        border: '1px solid #e5e7eb', // Set border
+        borderRadius: '0.25rem', // Add border radius for rounded corners
+       // padding: '0.5rem', // Add padding for better spacing
+        color: 'purple',
+      }}
+    >
+      <option value="hindu"> Hindu </option>
+      <option value="christian">Christian</option>
+      <option value="muslim">Muslim</option>
+      <option value="buddhist">Buddhist</option>
+      <option value="others">Others</option>
+    </select>
+            </div>
+            <div className="mb-8 flex gap-8">
+              <Input {...register('caste')}  size="lg" label="Caste" />
+            </div>
+
+            <div className="mb-8 flex gap-8" >
             <label style ={{color:'dark-grey'}} variant="standard" size="lg">Category</label>
             {/* <select {...register('category')} variant="standard" size="lg">
                <option value="budget">Budget Package</option>
@@ -121,9 +150,9 @@ export const ContactUs = () => {
         color: 'purple',
       }}
     >
-      <option value="budget">Budget Package</option>
-      <option value="classic">Classic Package</option>
-      <option value="elite">Elite Package</option>
+      <option value="budget">Budget Package - ₹9999 </option>
+      <option value="classic">Classic Package -₹19999</option>
+      <option value="elite">Elite Package - ₹29999</option>
     </select>
             </div>
             <Textarea {...register('message')}  size="lg" label="Message" rows={2} />

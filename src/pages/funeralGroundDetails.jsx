@@ -398,15 +398,107 @@
 
 // Funeral Details V6 Code 
 
+// import React from 'react';
+// import { useLocation } from 'react-router-dom';
+// import '../../public/css/funeral.css'; // Import the CSS file
+// import '../../public/css/imageslider.css'; 
+// import ImageSlider from '../components/imageslider';
+
+// export const FuneralGroundDetails = () => {
+//   const location = useLocation();
+//   var sampleUrls  = "https://picsum.photos/seed/picsum/200/300,https://picsum.photos/id/237/200/300,https://picsum.photos/200/300?grayscale,http://img.youtube.com/vi/EqWRZrupLrI/0.jpg"
+
+//   const handleGoBack = () => {
+//     window.history.back();
+//   };
+
+//   const { state } = location;
+//   const { ground } = state || {};
+
+//   if (!ground) {
+//     return <div>No data available</div>;
+//   }
+
+//   return (
+//     <div className="p-4">
+//       <div style={{ marginTop: '70px' }}>
+//         <button onClick={handleGoBack} className="go-back-button">
+//           Go Back
+//         </button>
+//         <h1 className="text-3xl font-bold mt-8 mb-4">{ground.GroundName}</h1>
+//         <div className="mb-8 flex justify-center">
+//           {/* Replace the img tag with ImageSlider component */}
+//           {/* <ImageSlider imageUrls={sampleUrls.split(',')} /> */}
+//          {ground.GroundImageURL != "undefined" && <ImageSlider imageUrls={ground.GroundImageURL.split(',')}  /> }
+//         </div>
+//         <div className="funeral-details">
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Contact Information</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Phone:</span> {ground.GroundPhoneNumber}</p>
+//               <p><span className="font-semibold">Website:</span> <a href={ground.GroundWebsiteURL} target="_blank" rel="noopener noreferrer">{ground.GroundWebsiteURL}</a></p>
+//               <p><span className="font-semibold">Contact Person:</span> {ground.ContactPersonName}</p>
+//               <p><span className="font-semibold">Designation:</span> {ground.ContactPersonDesignation}</p>
+//               <p><span className="font-semibold">Mobile:</span> {ground.ContactPersonMobileNumber}</p>
+//               <p><span className="font-semibold">Email:</span> {ground.Email}</p>
+//             </div>
+//           </div>
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Location Details</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Address:</span> {ground.Address}, {ground.City}, {ground.State}, {ground.Country}, {ground.Pincode}</p>
+//               <p><span className="font-semibold">Taluk:</span> {ground.Taluk}</p>
+//               <p><span className="font-semibold">Village:</span> {ground.VillageName}</p>
+//             </div>
+//           </div>
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Operational Information</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Hours:</span> {ground.OperationalHours}</p>
+//               <p><span className="font-semibold">Religion Supported:</span> {ground.ReligionSupported}</p>
+//             </div>
+//           </div>
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Services and Facilities</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Services:</span> {ground.Services}</p>
+//               <p><span className="font-semibold">Facilities:</span> {ground.Facilities}</p>
+//             </div>
+//           </div>
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Fees and Procedures</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Fees:</span> {ground.Fees}</p>
+//               <p><span className="font-semibold">Procedures:</span> {ground.Procedures}</p>
+//             </div>
+//           </div>
+//           <div className="funeral-details-card">
+//             <h2 className="section-heading">Requirements and Reviews</h2>
+//             <div className="details">
+//               <p><span className="font-semibold">Requirements:</span> {ground.Requirements}</p>
+//               <p><span className="font-semibold">User Review:</span> {ground.UserReview}</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default FuneralGroundDetails;
+
+
+// Version 7 : Copy of 6.(6 is the working version)
+
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import '../../public/css/funeral.css'; // Import the CSS file
-import '../../public/css/imageslider.css'; 
+import '../../public/css/funeral.css';
+import '../../public/css/imageslider.css';
 import ImageSlider from '../components/imageslider';
 
 export const FuneralGroundDetails = () => {
   const location = useLocation();
-  var sampleUrls  = "https://picsum.photos/seed/picsum/200/300,https://picsum.photos/id/237/200/300,https://picsum.photos/200/300?grayscale,http://img.youtube.com/vi/EqWRZrupLrI/0.jpg"
+  const sampleUrls = "https://picsum.photos/seed/picsum/200/300,https://picsum.photos/id/237/200/300,https://picsum.photos/200/300?grayscale,http://img.youtube.com/vi/EqWRZrupLrI/0.jpg";
 
   const handleGoBack = () => {
     window.history.back();
@@ -416,67 +508,61 @@ export const FuneralGroundDetails = () => {
   const { ground } = state || {};
 
   if (!ground) {
-    return <div>No data available</div>;
+    return <div className="no-data">No data available</div>;
   }
 
   return (
-    <div className="p-4">
-      <div style={{ marginTop: '70px' }}>
+    <div className="funeral-page-container">
+      {/* Header Section */}
+      <div className="header">
         <button onClick={handleGoBack} className="go-back-button">
-          Go Back
+          &larr; Go Back
         </button>
-        <h1 className="text-3xl font-bold mt-8 mb-4">{ground.GroundName}</h1>
-        <div className="mb-8 flex justify-center">
-          {/* Replace the img tag with ImageSlider component */}
-          {/* <ImageSlider imageUrls={sampleUrls.split(',')} /> */}
-         {ground.GroundImageURL != "undefined" && <ImageSlider imageUrls={ground.GroundImageURL.split(',')}  /> }
+        <h1 className="page-title">{ground.GroundName}</h1>
+      </div>
+
+      {/* Content Section */}
+      <div className="content">
+        {/* Left Column: Image Slider */}
+        <div className="image-slider-container">
+          {ground.GroundImageURL !== "undefined" && (
+            <ImageSlider imageUrls={ground.GroundImageURL.split(',')} />
+          )}
         </div>
-        <div className="funeral-details">
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Contact Information</h2>
-            <div className="details">
-              <p><span className="font-semibold">Phone:</span> {ground.GroundPhoneNumber}</p>
-              <p><span className="font-semibold">Website:</span> <a href={ground.GroundWebsiteURL} target="_blank" rel="noopener noreferrer">{ground.GroundWebsiteURL}</a></p>
-              <p><span className="font-semibold">Contact Person:</span> {ground.ContactPersonName}</p>
-              <p><span className="font-semibold">Designation:</span> {ground.ContactPersonDesignation}</p>
-              <p><span className="font-semibold">Mobile:</span> {ground.ContactPersonMobileNumber}</p>
-              <p><span className="font-semibold">Email:</span> {ground.Email}</p>
-            </div>
+
+        {/* Right Column: Summary and Tabs */}
+        <div className="details-container">
+          {/* Summary Card */}
+          <div className="summary-card">
+            <h2 className="section-heading">Summary</h2>
+            <p><strong>Contact Person:</strong> {ground.ContactPersonName}</p>
+            <p><strong>Phone:</strong> {ground.GroundPhoneNumber}</p>
+            <p><strong>Address:</strong> {ground.Address}, {ground.City}</p>
+            <p><strong>Website:</strong> <a href={ground.GroundWebsiteURL} target="_blank" rel="noopener noreferrer">{ground.GroundWebsiteURL}</a></p>
           </div>
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Location Details</h2>
-            <div className="details">
-              <p><span className="font-semibold">Address:</span> {ground.Address}, {ground.City}, {ground.State}, {ground.Country}, {ground.Pincode}</p>
-              <p><span className="font-semibold">Taluk:</span> {ground.Taluk}</p>
-              <p><span className="font-semibold">Village:</span> {ground.VillageName}</p>
+
+          {/* Tabs for Additional Information */}
+          <div className="tabs">
+            <div className="tab">
+              <h3>Contact Information</h3>
+              <p><strong>Phone:</strong> {ground.GroundPhoneNumber}</p>
+              <p><strong>Mobile:</strong> {ground.ContactPersonMobileNumber}</p>
+              <p><strong>Email:</strong> {ground.Email}</p>
             </div>
-          </div>
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Operational Information</h2>
-            <div className="details">
-              <p><span className="font-semibold">Hours:</span> {ground.OperationalHours}</p>
-              <p><span className="font-semibold">Religion Supported:</span> {ground.ReligionSupported}</p>
+            <div className="tab">
+              <h3>Operational Info</h3>
+              <p><strong>Hours:</strong> {ground.OperationalHours}</p>
+              <p><strong>Religion Supported:</strong> {ground.ReligionSupported}</p>
             </div>
-          </div>
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Services and Facilities</h2>
-            <div className="details">
-              <p><span className="font-semibold">Services:</span> {ground.Services}</p>
-              <p><span className="font-semibold">Facilities:</span> {ground.Facilities}</p>
+            <div className="tab">
+              <h3>Services and Facilities</h3>
+              <p><strong>Services:</strong> {ground.Services}</p>
+              <p><strong>Facilities:</strong> {ground.Facilities}</p>
             </div>
-          </div>
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Fees and Procedures</h2>
-            <div className="details">
-              <p><span className="font-semibold">Fees:</span> {ground.Fees}</p>
-              <p><span className="font-semibold">Procedures:</span> {ground.Procedures}</p>
-            </div>
-          </div>
-          <div className="funeral-details-card">
-            <h2 className="section-heading">Requirements and Reviews</h2>
-            <div className="details">
-              <p><span className="font-semibold">Requirements:</span> {ground.Requirements}</p>
-              <p><span className="font-semibold">User Review:</span> {ground.UserReview}</p>
+            <div className="tab">
+              <h3>Fees and Reviews</h3>
+              <p><strong>Fees:</strong> {ground.Fees}</p>
+              <p><strong>Reviews:</strong> {ground.UserReview}</p>
             </div>
           </div>
         </div>
@@ -486,4 +572,5 @@ export const FuneralGroundDetails = () => {
 };
 
 export default FuneralGroundDetails;
+
 

@@ -71,7 +71,7 @@
 
 /* funeral.css  */
 
-.ground-image {
+/* .ground-image {
   width: 100%;
   height: 50vh;
   object-fit: cover;
@@ -136,55 +136,62 @@
 
 .go-back-button:hover {
   background-color: #1e3a8a;
-}
-
-
-/* .image-slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 500px; 
-  margin: 0 auto;
-}
-
-.image-slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.image-slider img {
-  flex: 0 0 auto;
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-
-.slider-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.left {
-  left: 10px;
-}
-
-.right {
-  right: 10px;
-}
-
-.active {
-  opacity: 1;
-}
-
-@media screen and (max-width: 768px) {
-  .slider-control {
-    font-size: 1.5rem;
-  }
 } */
+
+
+
+
+.funeral-page-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.image-slider-container {
+  flex: 1;
+}
+
+.details-container {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.summary-card {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.tab {
+  margin-bottom: 20px;
+}
+
+.go-back-button {
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
