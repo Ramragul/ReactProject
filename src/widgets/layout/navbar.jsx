@@ -153,7 +153,7 @@ Navbar.defaultProps = {
       target="_blank"
     >
       <Button variant="gradient" size="lg" fullWidth>
-        Call us : +1 12345678
+        Call us :  9629705557
       </Button>
     </a>
   ),
